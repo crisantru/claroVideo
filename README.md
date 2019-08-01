@@ -8,10 +8,8 @@
         * ReactJS
         * css
   4. Tecnologías
-        * redux
         * npm
         * webpack
-        * babel
         
 ## Capturas
 
@@ -30,10 +28,11 @@
   Una vez estando dentro de la carpeta raiz del proyecto ejecutar los siguientes 
   comandos: 
 
-### npm install
-### npm run start:dev (correr servidor webpack).
+##ENV Development
+#### npm install
+#### npm run start:dev (correr servidor webpack).
 
-## Opcional
+##ENV Production
 ### npm run build (webpack mode: production)
-> archivos generados dentro de la carpeta dist, abrir index.html en cualquier navegador.
+> Salida de Archivos directorio /dist, correr archivo index.html en cualquier navegador.
    

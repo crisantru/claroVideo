@@ -9,11 +9,17 @@ class InputSearch extends React.Component {
     super(props);
     this.state = {
       query: "",
-      results: []
+      results: [],
+      search: ""
     };
 
     this.onChange = this.onChange.bind(this);
     this.onKeyPress = this.onKeyPress.bind(this);
+    this.onClick = this.onClick.bind(this);
+  }
+
+  componentDidUpdate() {
+    console.log(this.state.search);
   }
 
   getInfoMovies = () => {
@@ -31,7 +37,7 @@ class InputSearch extends React.Component {
           device_model: "web",
           device_type: "web",
           HKS: "aldvd92kttc77ici1701ui1ds2",
-          quantity: "10",
+          quantity: "21",
           node_id: "43864"
         }
       })
@@ -43,9 +49,10 @@ class InputSearch extends React.Component {
       });
   };
 
-  onChange = () => {
+  onChange = e => {
     this.setState(
       {
+        [e.target.name]: e.target.value,
         query: this.search.value
       },
       () => {
@@ -70,6 +77,16 @@ class InputSearch extends React.Component {
     }
   }
 
+  onClick(e) {
+    e.preventDefault();
+    const name = e.target.getAttribute("value");
+    this.setState({
+      search: name,
+      query: name,
+      results: []
+    });
+  }
+
   render() {
     return (
       <div className="divSearch">
@@ -78,11 +95,15 @@ class InputSearch extends React.Component {
           className="inputS"
           name="search"
           placeholder="Introduce tu busqueda"
+          autoComplete="off"
           ref={input => (this.search = input)}
           onChange={this.onChange}
           onKeyPress={this.onKeyPress}
         />
-        <Suggestions results={this.state.results} />
+        <Suggestions
+          onClick={e => this.onClick(e)}
+          results={this.state.results}
+        />
       </div>
     );
   }

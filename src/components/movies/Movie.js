@@ -25,12 +25,11 @@ class Movie extends Component {
           device_model: "web",
           device_type: "web",
           HKS: "aldvd92kttc77ici1701ui1ds2",
-          quantity: "10",
+          quantity: "21",
           node_id: "43864"
         }
       })
       .then(response => {
-        console.log(response.data.response.groups);
         this.setState({ photos: response.data.response.groups });
       })
       .catch(function(error) {

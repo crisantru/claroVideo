@@ -1,7 +1,11 @@
 import React from "react";
 
 const Suggestions = props => {
-  const options = props.results.map(r => <li key={r.id}>{r.title}</li>);
+  const options = props.results.map(r => (
+    <li onClick={props.onClick} value={r.title} key={r.id}>
+      {r.title}
+    </li>
+  ));
   let styles;
 
   if (options.length > 0) {

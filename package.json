@@ -9,7 +9,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "start:dev": "webpack-dev-server",
+    "start:dev": "webpack-dev-server --watch",
     "build": "webpack --mode production",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
