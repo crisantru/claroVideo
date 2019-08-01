@@ -28,11 +28,11 @@
   Una vez estando dentro de la carpeta raiz del proyecto ejecutar los siguientes 
   comandos: 
 
-##ENV Development
+## ENV Development
 #### npm install
 #### npm run start:dev (correr servidor webpack).
 
-##ENV Production
-### npm run build (webpack mode: production)
+## ENV Production
+#### npm run build (webpack mode: production)
 > Salida de Archivos directorio /dist, correr archivo index.html en cualquier navegador.
    
